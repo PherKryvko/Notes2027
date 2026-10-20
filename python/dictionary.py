@@ -61,4 +61,18 @@ stats["assists"] += 1
 stats = {"goals": 3}
 stats["goals"] += 1
 stats["assists"] = stats.get("assists", 0) + 1 
-print(stats)
+#print(stats)
+
+
+"""
+Given players = [{"name": "Ana", "stats": {"goals": 2}}, {"name": "Ben", "stats": {"goals": 4}}], 
+without a loop: add one goal to Ana, append a new player Cal with 0 goals, and print Ben's goals.
+"""
+players = [{"name": "Ana", "stats_": {"goals": 2}}, {"name": "Ben", "stats_": {"goals": 4}}]
+players[0]["stats_"]["goals"] += 1
+print(players[0])
+
+players.append({"name": "cal", "stats_": {"goals": 0}})
+print(players[players.count(key) - 1])
+
+print(players[1]["stats_"]["goals"])
