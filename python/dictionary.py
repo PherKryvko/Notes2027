@@ -36,9 +36,9 @@ print(k)
 """
 Write a dict comprehension: from prices = {"apple": 0.5, "melon": 2.0, "kiwi": 0.3} build a dict of items under £1 with the price in pence. Then invert a dict.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!"""
 
-
+"""
 Write from memory: given counts = {"apple": 2},
 add one to "apple" and one to "pear" (not yet a key) using .get(), 
 so neither line can raise KeyError.
@@ -47,6 +47,18 @@ Then show just the keys and just the values as lists.
 counts = {"apple": 2}
 
 counts["apple"] += 1
-counts.get("pear", 0) + 1
-print(counts.keys)
-print(counts.values)
+counts["pear"] = counts.get("pear", 0) + 1
+print(counts.keys())
+print(counts.values())
+
+
+""" Spot bugs
+stats = {"goals": 3}
+stats["goals"] = 1
+stats["assists"] += 1
+"""
+
+stats = {"goals": 3}
+stats["goals"] += 1
+stats["assists"] = stats.get("assists", 0) + 1 
+print(stats)
