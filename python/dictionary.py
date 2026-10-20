@@ -73,6 +73,27 @@ players[0]["stats_"]["goals"] += 1
 print(players[0])
 
 players.append({"name": "cal", "stats_": {"goals": 0}})
-print(players[players.count(key) - 1])
+print(players[-1])
 
 print(players[1]["stats_"]["goals"])
+
+
+"""
+Spot the bug and give a safe alternative using a method you know:
+stock = {"apple": 0, "pear": 4}
+print(stock["banana"])
+
+Then predict stock.get("apple") and stock.get("banana"). Why doesn't 0 mean the key is missing?
+"""
+stock = {"apple": 0, "pear": 4}
+print(stock.get("banana", 0)) # 0 doesnt mean missing as it is printing the value, Error not found is the correct error if not found
+
+"""
+Mixed check, predict each: 
+{"Name": "Chris"}.get("name"), #None
+{"Name": "Chris"}.get("name", "unknown"),  #unknown
+"apple" in {"apple": 0},  #True
+len({"a": 1, "b": 2}). #2
+""" 
+
+
