@@ -2,13 +2,15 @@ import json
 from datetime import UTC, datetime
 from uuid import uuid4
 
+var_example = 100
+
 message = {
     "id": str(uuid4()), 
     #A UUID is a random ID that is effectively guaranteed to be unique. 
     # You don’t need a central counter or a database to hand out numbers, so any client can create IDs on its own without clashing with anyone else.
     
     "text": "Hello",
-    "final": True,
+    "final": var_example,
     
     "speaker": False,
     
@@ -23,7 +25,29 @@ back = json.loads(body) #json text to py dict
 
 print(back["final"] is True,
 back["speaker"] is None)
+
+
+
+
+body_dictionary_message = {
+    "id": str(uuid4()),
     
+    #Any other data you want in here
+    
+    "created_at": datetime.now(UTC).isoformat(),   
+}
+    
+
+
+body_for_json = {
+    "id": str(uuid4()),
+    
+    
+    "created_at": datetime.now(UTC).isoformat(),
+}
+
+
+
 
 """
 
