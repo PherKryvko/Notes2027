@@ -17,41 +17,15 @@ message = {
     "created_at": datetime.now(UTC).isoformat(),
     }
 
+with open("body.json", "w") as f:
+    json.dump(message, f)
+
+##################
 body = json.dumps(message) #py dict to json text
 
-print(body)
+
 
 back = json.loads(body) #json text to py dict
-
-print(back["final"] is True,
-back["speaker"] is None)
-
-
-
-
-body_dictionary_message = {
-    "id": str(uuid4()),
-    
-    #Any other data you want in here
-    
-    "created_at": datetime.now(UTC).isoformat(),   
-}
-    
-
-
-body_for_json = {
-    "id": str(uuid4()),
-    
-    
-    "created_at": datetime.now(UTC).isoformat(),
-}
-
-
-
-new_body_2 = {
-    "id": str(uuid4()),
-    "created_at": datetime.now(UTC).isoformat(),
-}
 
 
 
