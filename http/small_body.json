@@ -1,0 +1,11 @@
+{
+  "text": "Hello",
+  "final": true,
+  "speaker": null
+}
+
+/*
+curl.exe -i https://httpbin.org/get
+
+
+*/
