@@ -48,6 +48,12 @@ body_for_json = {
 
 
 
+new_body_2 = {
+    "id": str(uuid4()),
+    "created_at": datetime.now(UTC).isoformat(),
+}
+
+
 
 """
 
