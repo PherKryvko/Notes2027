@@ -29,3 +29,21 @@ if(collected.StartsWith("E")){
     
 }
 
+
+/////////////Formatting
+string name = " eeee ee e eee";
+decimal price = 1234.5m;
+Console.WriteLine($"£{price:N2}");                 // £1,234.50
+Console.WriteLine($"{DateTime.Today:yyyy-MM-dd}"); // e.g. 2026-10-22
+Console.WriteLine($"[{name,-10}]");                // left-align in 10 characters
+Console.WriteLine($"[{name,10}]");                 // right-align in 10 characters
+
+
+///MISC
+a = "E";
+b = "EE";
+
+Console.WriteLine(name[1..3]); 
+Console.WriteLine(name[^1]);
+string.Equals(a, b, StringComparison.OrdinalIgnoreCase);
+string.IsNullOrWhiteSpace(name);
