@@ -1,0 +1,15 @@
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\bin\Debug\net9.0\python.exe
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\bin\Debug\net9.0\python.deps.json
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\bin\Debug\net9.0\python.runtimeconfig.json
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\bin\Debug\net9.0\python.dll
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\bin\Debug\net9.0\python.pdb
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\python.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\python.AssemblyInfoInputs.cache
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\python.AssemblyInfo.cs
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\python.csproj.CoreCompileInputs.cache
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\python.sourcelink.json
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\python.dll
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\refint\python.dll
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\python.pdb
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\python.genruntimeconfig.cache
+C:\Users\celliott25\Videos\Notes2027\Git\general_code\c#\obj\Debug\net9.0\ref\python.dll
