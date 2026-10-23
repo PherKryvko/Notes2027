@@ -51,3 +51,90 @@ for item in players:
 #Predict: {"Name": "Chris"}.get("name", "unknown"), list({"x": 1, "y": 2}.values()), len({"a": 1, "b": 2}) and "b" in {"a": 1, "b": 2}.
 #If no chris become unknown for name...
 #use 1, 2 as values, check the length of it being 2, and b is found in there so its True
+
+
+
+"""
+Question 1: Counting
+
+python
+colors = ["red", "blue", "red", "green", "red"]
+
+Using a for loop and .get():
+
+Create an empty dict called count.
+Loop over colors. For each colour, add 1 to its count in count.
+Print count.
+Print the keys as a list.
+Print the values as a list.
+
+Before you run it, write down what you expect count to print.
+
+"""
+colors = ["red", "blue", "red", "green", "red"]
+
+count = {}
+
+for items in colors:
+    count[items] = count.get(items, 0) + 1
+
+print(f"{count.keys()} \n {count.values()}")
+
+"""
+Question 2: in vs .get()
+
+python
+stock = {"apple": 0, "pear": 4}
+Write down the output of each line, without running it:
+print(stock.get("apple"))
+print(stock.get("banana"))
+print("apple" in stock)
+Using in (not .get()), write an if/else that checks for "banana":
+If it’s there, print its number.
+If not, print exactly missing.
+In one sentence, say why if stock.get("apple"): would be a bug here.
+"""
+
+
+stock = {"apple": 0, "pear": 4}
+#0, bug, True
+
+if "banana" in stock:
+    print(stock["banana"])
+else:
+    print("missing banana")
+
+if stock.get("apple", -100):
+    print("FOUND")
+
+
+#As it has no default value set
+
+
+
+"""
+Build count with a for loop and .get(), then print(count). Write your predicted output first.
+
+Print the keys as a list, then the values as a list.
+
+Use in to check for "plum". If it’s missing, print exactly missing. Otherwise print its count.
+
+In one sentence, say why if count.get("fig"): is risky for checking that a key exists, and give one fix.
+"""
+
+
+fruits = ["fig", "kiwi", "fig"] #2 1
+
+count = {}
+
+for items in fruits:
+    count[items] = count.get(items, 0) + 1
+    
+print(count)
+print(list(count.keys()))
+print(list(count.values()))
+
+if "plum" in count:
+    print(f"Count of plum is: {count["plum"]}")
+else:
+    print("missing")
