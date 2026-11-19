@@ -32,3 +32,29 @@ def percentile(values, p):
     s = sorted(values)
     k = max(0, math.ceil(p / 100 * len(s)) - 1)
     return s[k]
+
+
+
+#Unseen problem: “Given a list of transaction IDs, return 
+#the first ID that appears twice.” List your first steps in order, 
+# then write the efficient solution and state its time and space.
+
+def return_transaction_match_found(transactions):
+    transactions = [1,2,3,33,33,33,2123,2131232134]
+    
+    new_dict = {}
+    
+    for t in transactions:
+        new_dict[t] = new_dict.get(t, 0) + 1
+        if new_dict[t] > 1:
+            return t
+    #o(n), o(n)
+    
+    
+def seen(listed):
+    saw = set()
+    for t in transactions:
+        if t in saw:
+            return t
+        saw.add(t)  
+    return None
