@@ -69,6 +69,49 @@ def window_calc(nums, window_size):
 
 
 
+def win(nums, size):
+    win_total = sum(nums[0:size])
+    largest = win_total
+    index = 1
+    
+    while index <= len(nums) - size:
+        win_total = win_total - nums[index - 1] + nums[index + size - 1]
+        
+        if win_total > largest:
+            largest = win_total
+        
+        index+= 1
+        
+    return largest
+
+
+
+
+
+
+
+
+
+
+
+
+
+def win_calc(nums, win_size):
+    win_total = sum(nums[0:win_size])
+    largest = win_total
+    index = 1
+    
+    while index <= len(nums) - win_size:
+        win_total = win_total - nums[index - 1] + nums[index - 1 + win_size]
+        
+        if win_total > largest:
+            largest = win_total
+        
+        index+=1
+        
+    return largest
+
+
 
 max_window_size = 2
 nums = [5, 1, -10, 4]
