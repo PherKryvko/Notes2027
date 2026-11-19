@@ -1,3 +1,73 @@
+"""
+Write one function, inspect(sentence), that returns a dictionary. Then call it on a sentence and print the results.
+
+Think of it in three parts, one per line of code:
+
+Check the input. If the sentence is empty or only spaces, raise an error: ValueError, with a message. 
+This is the same check as the empty-list check for average.
+
+Work out the values. Each dictionary key gets one value:
+length: how many characters
+first_char and last_char: the first and last characters
+reversed: the sentence backwards
+words: the list of words
+word_count: how many words there are
+Return the dictionary. Put the values under their key names, then return it.
+
+Outside the function, call it on a test sentence and print each key.
+
+Write the function and the call, then paste the code and the printed output. Start with the empty check.
+
+"""
+
+sentence = "we are here today, gathered by our enemies and the fruitful vanguard amongst ourselves"
+
+def avg(sentence):
+    if len(sentence.strip()) == 0:
+        raise ValueError("No text")
+
+def dict_return(sentence):
+    avg(sentence)
+    
+    dict_ = {}
+    dict_["length"] = len(sentence)
+    
+    dict_["first_char"] = sentence[0]
+    dict_["last_char"] = sentence[-1]
+    dict_["reversed"] = sentence[::-1]
+    dict_["words"] = sentence.split()
+    dict_["word_count"] = len(sentence.split())
+    
+    return dict_
+
+dict_return_ = {}
+dict_return_ = dict_return(sentence)
+print(f"{list(dict_return_.keys())} = {list(dict_return_.values())}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sentence_example = "A e E eeee EEEE eeZ"
 
 length = len(sentence_example)
