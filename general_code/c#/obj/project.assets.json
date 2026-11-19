@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\celliott25\\Videos\\Notes2027\\Git\\general_code\\c#\\python.csproj",
+      "projectUniqueName": "C:\\Users\\celliott25\\Desktop\\Notes2027\\Git\\general_code\\c#\\python.csproj",
       "projectName": "python",
-      "projectPath": "C:\\Users\\celliott25\\Videos\\Notes2027\\Git\\general_code\\c#\\python.csproj",
+      "projectPath": "C:\\Users\\celliott25\\Desktop\\Notes2027\\Git\\general_code\\c#\\python.csproj",
       "packagesPath": "C:\\Users\\celliott25\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\celliott25\\Videos\\Notes2027\\Git\\general_code\\c#\\obj\\",
+      "outputPath": "C:\\Users\\celliott25\\Desktop\\Notes2027\\Git\\general_code\\c#\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

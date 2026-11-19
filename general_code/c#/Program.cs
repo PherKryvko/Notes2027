@@ -1,44 +1,78 @@
-﻿//////////////////////////////////STRING BUILDER
+﻿/*
+Split and join: Take " ada, linus ,,grace ", split it on commas, drop the blanks and extra spaces, then print the names joined with " | ".
+Null handling: Declare string? nickname = null; and print none if it’s null or blank, without crashing.
+Formatting: Print a decimal price of 1234.5m as £1,234.50, and today’s date as 2026-11-17.
+StringBuilder: Build a three-line report (Line 1, Line 2, Line 3) with StringBuilder, then print it.
+Case-insensitive check: Check whether " YES " matches "yes", ignoring case and spaces, and print true or false.
+Constants, types and scope: Declare const int MaxNames = 3;, use var for a value you assign later in a block, and print the value after the block.
+*/
 using System.Text;
+
+string names_ = " ada, linus ,,grace ";
+names_ = names_.Trim();
+string[] collection = names_.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+string names__ = string.Join(" | ", collection);
+Console.WriteLine(names__);
+
+
+string? nick = null;
+
+if (string.IsNullOrWhiteSpace(nick))
+{
+    Console.WriteLine("none");
+}
+
+
+decimal cost = 1234.5m;
+//as £1,234.50, and today’s date as 2026-11-17.
+Console.WriteLine($"£{cost:N2}");
+Console.WriteLine($"{DateTime.Today:yyyy-MM-dd}");
+
 
 var sb = new StringBuilder();
 
-for(int i = 0; i < 3; i++){
-    sb.Append($"NEW LINE").AppendLine();
+for (int i = 1; i < 4; i++)
+{
+    sb.AppendLine("Line " + i);
 }
 
-string builtSB = sb.ToString();
-Console.WriteLine(builtSB);
+string newSB = sb.ToString();
+Console.WriteLine(newSB);
 
 
-//////////////////////////////////SPLIT JOIN
-string names = "apple, banana ,cherry";
-string[] pieces = names.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
-string collected = string.Join(" | ", pieces);
-Console.WriteLine(collected);
+//Case-insensitive check: Check whether " YES " matches "yes", ignoring case and spaces, and print true or false.
 
-if(collected.StartsWith("E")){
-    
+string yes = "  YES  ";
+
+if(string.Equals(yes.Trim(), "yes", StringComparison.OrdinalIgnoreCase))
+{
+    Console.WriteLine("True");
+}
+else
+{
+    Console.WriteLine("False");
 }
 
 
-/////////////Formatting
-string name = " eeee ee e eee";
-decimal price = 1234.5m;
-Console.WriteLine($"£{price:N2}");                 // £1,234.50
-Console.WriteLine($"{DateTime.Today:yyyy-MM-dd}"); // e.g. 2026-10-22
-Console.WriteLine($"[{name,-10}]");                // left-align in 10 characters
-Console.WriteLine($"[{name,10}]");                 // right-align in 10 characters
+//Constants, types and scope: Declare const int MaxNames = 3;, use var for a value you assign later in a block, and print the value after the block.
+const int MaxNames = 3;
+var noot = 1;
+
+if(noot == 1)
+{
+    noot = 3;
+}
+
+Console.Write(noot);
 
 
-///MISC
-string a = "E";
-string b = "EE";
 
-Console.WriteLine(name[1..3]); 
-Console.WriteLine(name[^1]);
-string.Equals(a, b, StringComparison.OrdinalIgnoreCase);
-string.IsNullOrWhiteSpace(name);
+
+
+
+
+
+
 
 
 
@@ -71,9 +105,9 @@ Take " Alice ; bob ;; CHARLIE ", split on ;,
 trim each piece, and drop empty entries. Print each name in upper case, one per line, as NAME (length).
 */
 string namesAgain = " Alice ; bob ;; CHARLIE ";
-string[] collection = namesAgain.Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+string[] DDDDD = namesAgain.Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
 
-foreach(string item in collection)
+foreach(string item in DDDDD)
 {
     Console.WriteLine($"{item.ToUpper()} {item.Length}");
 }
@@ -108,7 +142,7 @@ if (string.Equals(allowed[0], userInput, StringComparison.OrdinalIgnoreCase)){
 For a decimal price of 1234.5m and a name "Tea", 
 print one line with the name left-aligned in 12 characters, then the price right-aligned in 10 characters, formatted with two decimal places and a £ sign.
 */
-decimal cost = 1234.5m;
+decimal cosssst = 1234.5m;
 string cup = "Tea";
 
-Console.WriteLine($"\n{cup, -12} £{cost, 10:N2}");
+Console.WriteLine($"\n{cup, -12} £{cosssst, 10:N2}");
