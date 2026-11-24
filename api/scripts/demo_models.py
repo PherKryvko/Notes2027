@@ -1,5 +1,5 @@
 from pydantic import ValidationError       # the error Pydantic raises when data is wrong
-from app.models import Message, Conversation  # the models we just wrote
+from app.models import Message, Conversation, Transcript # the models we just wrote
 from time import sleep                     # only for pausing, not needed for the models
 
 # Build a Message from a dict (like data from a request). "1840" is converted to the number 1840.
@@ -16,3 +16,13 @@ try:
 except ValidationError as exc:
     for err in exc.errors():
         print(err["loc"], err["type"])  # loc says which field, type says what went wrong
+        
+    
+try: 
+    Transcript.model_validate({"text": "Hello Sir", "language": "en-US", "confidence" : "1", "duration_ms": 1})
+except ValidationError as exc:
+    for err in exc.errors():
+        print("Transcript", err["loc"], err["type"])
+        
+    
+    
