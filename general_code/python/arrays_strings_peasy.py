@@ -61,3 +61,15 @@ def window_slide(nums, window_size):
 
 #it is better as it reduces the o(n*k) to o(1) for big-time per step
 
+"""
+Question 6: Write first_greater(nums, target) using enumerate(). 
+It should return the index of the first value greater than target, or -1 if there isn't one. Where must the return -1 go, and why?
+"""
+
+def first_greater(nums, target):
+
+    for index, n in enumerate(nums):
+        if n > target:
+            return index
+        
+    return -1 #goes here as if no result, it needs a return of -1
