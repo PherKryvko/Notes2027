@@ -73,3 +73,32 @@ def first_greater(nums, target):
             return index
         
     return -1 #goes here as if no result, it needs a return of -1
+
+"""
+Question 7: Best Time to Buy and Sell Stock. 
+Write a one-pass best-so-far solution and state its complexity.
+Why update the minimum price before, or independently of, the profit?
+"""
+"""
+lowest so far: the cheapest price you've seen on any earlier day, which is the best day to have bought.
+best profit so far: the most you could have made.
+"""
+
+def best_buy(l):
+    
+    lowest_purchase_total = l[0]
+    best = 0
+    
+    for i in l:
+        if i < lowest_purchase_total:
+            lowest_purchase_total = i
+            
+        sell_amount = i - lowest_purchase_total
+        if sell_amount > best:
+            best = sell_amount
+    
+    return best
+
+
+print(best_buy([7, 1, 5, 3, 6, 4]))
+
