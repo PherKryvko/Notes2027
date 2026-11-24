@@ -43,3 +43,21 @@ print(new_char_dict_tally) #O(n) space complexity, O(n) time, it is only o(1) if
 **Question 3:** Write a fixed-size sliding window that returns the maximum sum of any k 
 consecutive numbers. Why is `new_sum = old_sum - leaving + entering` better than re-summing each window?
 """
+def window_slide(nums, window_size):
+    window_sum = sum(nums[0:window_size])
+    largest = window_sum
+    
+    index = 1
+    
+    while index <= len(nums) - window_size:
+        window_sum = window_sum - nums[index -1] + nums[index - 1 + window_size]
+        
+        if window_sum > largest:
+            largest = window_sum
+        
+        index+=1
+            
+    return largest
+
+#it is better as it reduces the o(n*k) to o(1) for big-time per step
+
