@@ -59,3 +59,4 @@ class Transcript(BaseModel):
     duration_ms: int = Field(ge=0)
     
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    
