@@ -84,21 +84,19 @@ lowest so far: the cheapest price you've seen on any earlier day, which is the b
 best profit so far: the most you could have made.
 """
 
-def best_buy(l):
-    
-    lowest_purchase_total = l[0]
-    best = 0
-    
-    for i in l:
-        if i < lowest_purchase_total:
-            lowest_purchase_total = i
-            
-        sell_amount = i - lowest_purchase_total
-        if sell_amount > best:
-            best = sell_amount
-    
-    return best
+def max_profit(prices):
+    lowest_price_so_far = prices[0]
+    best_profit_so_far = 0
+
+    for price_today in prices:
+        if price_today < lowest_price_so_far:
+            lowest_price_so_far = price_today
+
+        profit_if_sold_today = price_today - lowest_price_so_far
+        if profit_if_sold_today > best_profit_so_far:
+            best_profit_so_far = profit_if_sold_today
+
+    return best_profit_so_far
 
 
-print(best_buy([7, 1, 5, 3, 6, 4]))
-
+print(max_profit([7, 1, 5, 3, 6, 4]))  # 5

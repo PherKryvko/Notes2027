@@ -49,17 +49,7 @@ class Conversation(BaseModel):
         if self.messages and self.messages[0].role == "assistant":  # if there are messages and the first is from the assistant
             raise ValueError("a conversation cannot start with an assistant message")
         return self  # hand the checked conversation back
-    
-    
-    
-"""
-1. Your turn: a Transcript model. Add a Transcript model to models.py with:
 
-text: a string
-language: only "en-GB" or "en-US"
-confidence: a float from 0 to 1, using Field(ge=0, le=1)
-duration_ms: an int, 0 or more
-"""
 
 class Transcript(BaseModel):
     id: UUID = Field(default_factory=uuid4)

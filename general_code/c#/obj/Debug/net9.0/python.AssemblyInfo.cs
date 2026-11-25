@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("python")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcf75a421c8ab426e12a42e73e77be44960ae06b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21bf8c0571c95b24a0d496aeaedeb94663d5029e")]
 [assembly: System.Reflection.AssemblyProductAttribute("python")]
 [assembly: System.Reflection.AssemblyTitleAttribute("python")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
