@@ -9,14 +9,21 @@ from uuid import UUID, uuid4
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
-# ---------------------------------------------------------------------------
-# Drill 1: write a model from scratch
-# Message: role is "user" or "assistant" (nothing else), text is at least 1
-# character, audio_ms is an optional int that defaults to None.
-# Unknown keys must be rejected.
+    # ---------------------------------------------------------------------------
+    # Drill 1: write a model from scratch
+    # Message: role is "user" or "assistant" (nothing else), text is at least 1
+    # character, audio_ms is an optional int that defaults to None.
+    # Unknown keys must be rejected.
 # ---------------------------------------------------------------------------
 class Message(BaseModel):
-    pass  # TODO
+    model_config = ConfigDict(extra="forbid")
+    
+    id: UUID = Field(default_factory=uuid4)
+    role: Literal["user", "assistant"]
+    text: str = Field(min_length=1)
+    audio_ms: int | None = Field(default=None, ge=0)
+    
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
 # ---------------------------------------------------------------------------
@@ -31,7 +38,7 @@ class Note(BaseModel):
     def no_null_bytes(cls, value: str) -> str:
         if "\x00" in value:
             raise ValueError("text must not contain null bytes")
-
+        return value
 
 # ---------------------------------------------------------------------------
 # Drill 3: a rule across two fields
@@ -41,7 +48,11 @@ class Transcript(BaseModel):
     start_ms: int
     end_ms: int
     # TODO
-
+    @model_validator(mode="after")
+    def compare_start_end(self) -> Self:
+        if self.start_ms >= self.end_ms:
+            raise ValueError("No, it is too large")
+        return self
 
 # ---------------------------------------------------------------------------
 # Drill 4: fix the bug
@@ -51,8 +62,8 @@ class Transcript(BaseModel):
 # ---------------------------------------------------------------------------
 class Event(BaseModel):
     name: str
-    id: UUID = uuid4()
-    created_at: datetime = datetime.now(UTC)
+    id: UUID = Field(default_factory=uuid4)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
 # ---------------------------------------------------------------------------
@@ -68,8 +79,12 @@ class Item(BaseModel):
 
 
 def to_wire(item: Item) -> dict:
-    raise NotImplementedError  # TODO
+    dict_ = item.model_dump(mode="json")
+    return dict_
+    
+    
 
 
 def from_wire(raw: str) -> Item:
-    raise NotImplementedError  # TODO
+    return Item.model_validate_json(raw)
+    
